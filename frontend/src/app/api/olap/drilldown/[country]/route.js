@@ -2,7 +2,7 @@ import { query } from '@/lib/db';
 import { NextResponse } from 'next/server';
 
 export async function GET(request, { params }) {
-  const { country } = params;
+  const { country } = await params;
   try {
     const sql = `
       SELECT 

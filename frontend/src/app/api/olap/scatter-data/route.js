@@ -18,7 +18,6 @@ export async function GET() {
     const result = await query(sql);
     return NextResponse.json(result.rows);
   } catch (error) {
-    console.error('API Error (Scatter Data):', error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
