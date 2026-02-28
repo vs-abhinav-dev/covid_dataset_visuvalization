@@ -392,6 +392,42 @@ button:active {
   animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: floatAnimation 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 229, 255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
+  }
+}
+
+.pulse-glow-border:hover {
+  animation: pulseGlow 1.5s infinite;
+}
+
 /* Plotly overrides */
 .js-plotly-plot .plotly .modebar {
   background: transparent !important;
@@ -403,4 +439,56 @@ button:active {
 
 .js-plotly-plot .plotly .modebar-btn:hover path {
   fill: var(--accent) !important;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseBorder {
+  0% {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  50% {
+    border-color: rgba(0, 229, 255, 0.4);
+  }
+
+  100% {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.animate-pulse-border {
+  animation: pulseBorder 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.3);
+  }
+
+  100% {
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
 }

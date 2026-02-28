@@ -5,54 +5,63 @@ import createGlobe from 'cobe';
 
 export default function Globe({ markers = [] }) {
     const canvasRef = useRef();
+    const containerRef = useRef();
     const pointerInteracting = useRef(null);
     const pointerInteractionMovement = useRef(0);
     const [{ r }, setR] = useState({ r: 0 });
 
     useEffect(() => {
         let phi = 0;
-        let width = 0;
+        let globe = null;
+        let currentWidth = 0;
 
-        const onResize = () => {
-            if (canvasRef.current) {
-                width = canvasRef.current.offsetWidth;
-            }
-        };
-        window.addEventListener('resize', onResize);
-        onResize();
-
-        const globe = createGlobe(canvasRef.current, {
-            devicePixelRatio: 2,
-            width: width * 2,
-            height: width * 2,
-            phi: 0,
-            theta: 0.3,
-            dark: 1,
-            diffuse: 1.2,
-            mapSamples: 16000,
-            mapBrightness: 6,
-            baseColor: [0.1, 0.1, 0.2], // Dark slate blue
-            markerColor: [1, 0.3, 0.1], // Orange-red accent
-            glowColor: [0.1, 0.2, 0.4],
-            markers: markers.map(m => ({ location: [m.lat, m.lng], size: m.size })),
-            onRender: (state) => {
-                if (!pointerInteracting.current) {
-                    phi += 0.005;
+        const initGlobe = (width) => {
+            if (globe) globe.destroy();
+            globe = createGlobe(canvasRef.current, {
+                devicePixelRatio: 2,
+                width: width * 2,
+                height: width * 2,
+                phi: 0,
+                theta: 0.3,
+                dark: 1,
+                diffuse: 1.2,
+                mapSamples: 16000,
+                mapBrightness: 6,
+                baseColor: [0.1, 0.1, 0.2], // Dark slate blue
+                markerColor: [0, 0.898, 1], // Cyan accent
+                glowColor: [0.1, 0.2, 0.4],
+                markers: markers.map(m => ({ location: [m.lat, m.lng], size: m.size })),
+                onRender: (state) => {
+                    if (!pointerInteracting.current) {
+                        phi += 0.005;
+                    }
+                    state.phi = phi + r;
                 }
-                state.phi = phi + r;
-                state.width = width * 2;
-                state.height = width * 2;
+            });
+        };
+
+        const resizeObserver = new ResizeObserver((entries) => {
+            if (entries[0] && entries[0].contentRect.width > 0) {
+                const newWidth = entries[0].contentRect.width;
+                if (newWidth !== currentWidth) {
+                    currentWidth = newWidth;
+                    initGlobe(newWidth);
+                }
             }
         });
 
+        if (containerRef.current) {
+            resizeObserver.observe(containerRef.current);
+        }
+
         return () => {
-            globe.destroy();
-            window.removeEventListener('resize', onResize);
+            if (globe) globe.destroy();
+            resizeObserver.disconnect();
         };
     }, [markers, r]);
 
     return (
-        <div className="globe-container">
+        <div ref={containerRef} style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <canvas
                 ref={canvasRef}
                 onPointerDown={(e) => {

@@ -91,14 +91,14 @@ export default function OlapPage() {
 
       {/* ROLLUP */}
       <div className="glass-card" style={{ marginBottom: '2rem' }}>
-        <h3>Continent × Year → Total Cases (Rollup)</h3>
+        <h3>Continent × Year → Total Cases (3D Surface)</h3>
         <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>Aggregated multidimensional view of global case density.</p>
         <Plot
           data={[{
             z: z,
             x: years,
             y: continents,
-            type: 'heatmap',
+            type: 'surface',
             colorscale: [
               ['0.0', '#060913'],
               ['0.2', '#0f172a'],
@@ -113,12 +113,16 @@ export default function OlapPage() {
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: 'rgba(0,0,0,0)',
             font: { color: '#e2e8f0', family: 'Outfit' },
-            xaxis: { title: 'Year', gridcolor: 'rgba(255,255,255,0.05)' },
-            yaxis: { title: 'Continent', gridcolor: 'rgba(255,255,255,0.05)' },
-            margin: { t: 20, b: 40, l: 120, r: 20 },
+            scene: {
+              xaxis: { title: 'Year', gridcolor: 'rgba(255,255,255,0.05)' },
+              yaxis: { title: 'Continent', gridcolor: 'rgba(255,255,255,0.05)' },
+              zaxis: { title: 'Total Cases', gridcolor: 'rgba(255,255,255,0.05)' },
+              camera: { eye: { x: 1.5, y: 1.5, z: 1.2 } }
+            },
+            margin: { t: 20, b: 0, l: 0, r: 0 },
           }}
           useResizeHandler={true}
-          style={{ width: '100%', height: '400px' }}
+          style={{ width: '100%', height: '500px' }}
         />
       </div>
 
