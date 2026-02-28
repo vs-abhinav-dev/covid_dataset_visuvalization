@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Cuboid, Network, Activity, Globe2 } from 'lucide-react';
+import { LayoutDashboard, Cuboid, Network, Activity, Globe2, FileText } from 'lucide-react';
 
 export default function Layout({ children }) {
   const pathname = usePathname();
@@ -12,6 +12,7 @@ export default function Layout({ children }) {
     { name: 'OLAP / Data Cube', path: '/olap', icon: Cuboid },
     { name: 'Clustering', path: '/clustering', icon: Network },
     { name: 'Outliers', path: '/outliers', icon: Activity },
+    { name: 'ML Insights', path: '/ml-insights', icon: FileText },
   ];
 
   return (

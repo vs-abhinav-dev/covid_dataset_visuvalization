@@ -12,395 +12,178 @@
 ▲ Next.js 16.1.6 (Turbopack)
 - Local:         http://localhost:3000
 - Network:       http://172.16.210.130:3000
+- Environments: .env.local
 
 ✓ Starting...
-✓ Ready in 436ms
-○ Compiling / ...
- HEAD / 200 in 5.7s (compile: 5.5s, render: 257ms)
- GET / 200 in 62ms (compile: 10ms, render: 52ms)
- GET / 200 in 29ms (compile: 5ms, render: 24ms)
- GET / 200 in 321ms (compile: 239ms, render: 82ms)
- GET / 200 in 30ms (compile: 6ms, render: 24ms)
- GET / 200 in 107ms (compile: 44ms, render: 63ms)
- GET /api/olap/scatter-data 500 in 394ms (compile: 371ms, render: 23ms)
- GET /clustering 200 in 517ms (compile: 486ms, render: 31ms)
- GET / 200 in 51ms (compile: 6ms, render: 45ms)
- GET /api/olap/scatter-data 500 in 12ms (compile: 4ms, render: 8ms)
- GET /clustering 200 in 26ms (compile: 4ms, render: 22ms)
- GET /olap 200 in 445ms (compile: 406ms, render: 40ms)
- GET /api/olap/rollup 500 in 227ms (compile: 133ms, render: 94ms)
- GET /api/olap/rollup 500 in 8ms (compile: 2ms, render: 6ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 1046ms (compile: 928ms, render: 117ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 80ms (compile: 31ms, render: 49ms)
- GET /outliers 200 in 449ms (compile: 413ms, render: 36ms)
- GET / 200 in 17ms (compile: 4ms, render: 14ms)
- GET /api/olap/scatter-data 500 in 8ms (compile: 3ms, render: 5ms)
- GET /api/olap/scatter-data 500 in 14ms (compile: 9ms, render: 5ms)
- GET /olap 200 in 13ms (compile: 3ms, render: 10ms)
- GET /api/olap/rollup 500 in 8ms (compile: 3ms, render: 5ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 114ms (compile: 28ms, render: 86ms)
- GET /api/olap/rollup 500 in 8ms (compile: 2ms, render: 5ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 46ms (compile: 1356µs, render: 44ms)
- GET /olap 200 in 19ms (compile: 6ms, render: 13ms)
- GET / 200 in 19ms (compile: 5ms, render: 14ms)
- GET /api/olap/scatter-data 500 in 4ms (compile: 2ms, render: 2ms)
- GET /api/olap/scatter-data 500 in 5ms (compile: 1587µs, render: 3ms)
-✓ Compiled in 27ms
-✓ Compiled in 88ms
- GET / 200 in 30ms (compile: 3ms, render: 27ms)
- GET /api/olap/scatter-data 500 in 10ms (compile: 3ms, render: 7ms)
-✓ Compiled in 48ms
-⨯ ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js:72:31
-Parsing ecmascript source code failed
-[0m [90m 70 |[39m                 onMouseMove[33m=[39m{(e) [33m=>[39m {
- [90m 71 |[39m                     [36mif[39m (pointerInteracting[33m.[39mcurrent [33m!==[39m [36mnull[39m) {
-[31m[1m>[22m[39m[90m 72 |[39m                         [36mconst[39m delta المدينة [33m=[39m e[33m.[39mclientX [33m-[39m pointerInteracting[33m.[39mcurrent[33m;[39m
- [90m    |[39m                               [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
- [90m 73 |[39m                         pointerInteractionMovement[33m.[39mcurrent [33m=[39m delta المدينة[33m;[39m
- [90m 74 |[39m                         setR({ r[33m:[39m r [33m+[39m delta المدينة [33m/[39m [35m200[39m })[33m;[39m
- [90m 75 |[39m             pointerInteracting[33m.[39mcurrent [33m=[39m e[33m.[39mclientX[33m;[39m[0m
-
-'const' declarations must be initialized
-
-Import trace:
-  Client Component Browser:
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Server Component]
-
-
-
-./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js:72:37
-Parsing ecmascript source code failed
-[0m [90m 70 |[39m                 onMouseMove[33m=[39m{(e) [33m=>[39m {
- [90m 71 |[39m                     [36mif[39m (pointerInteracting[33m.[39mcurrent [33m!==[39m [36mnull[39m) {
-[31m[1m>[22m[39m[90m 72 |[39m                         [36mconst[39m delta المدينة [33m=[39m e[33m.[39mclientX [33m-[39m pointerInteracting[33m.[39mcurrent[33m;[39m
- [90m    |[39m                                     [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
- [90m 73 |[39m                         pointerInteractionMovement[33m.[39mcurrent [33m=[39m delta المدينة[33m;[39m
- [90m 74 |[39m                         setR({ r[33m:[39m r [33m+[39m delta المدينة [33m/[39m [35m200[39m })[33m;[39m
- [90m 75 |[39m             pointerInteracting[33m.[39mcurrent [33m=[39m e[33m.[39mclientX[33m;[39m[0m
-
-Expected a semicolon
-
-Import trace:
-  Client Component Browser:
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Server Component]
-
-
- GET / 500 in 829ms (compile: 735ms, render: 94ms)
- GET /olap 200 in 239ms (compile: 91ms, render: 148ms)
- GET /api/olap/rollup 500 in 25ms (compile: 13ms, render: 13ms)
- GET /api/olap/slice/2021 500 in 21ms (compile: 12ms, render: 9ms)
-⨯ ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js:72:31
-Parsing ecmascript source code failed
-[0m [90m 70 |[39m                 onMouseMove[33m=[39m{(e) [33m=>[39m {
- [90m 71 |[39m                     [36mif[39m (pointerInteracting[33m.[39mcurrent [33m!==[39m [36mnull[39m) {
-[31m[1m>[22m[39m[90m 72 |[39m                         [36mconst[39m delta المدينة [33m=[39m e[33m.[39mclientX [33m-[39m pointerInteracting[33m.[39mcurrent[33m;[39m
- [90m    |[39m                               [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
- [90m 73 |[39m                         pointerInteractionMovement[33m.[39mcurrent [33m=[39m delta المدينة[33m;[39m
- [90m 74 |[39m                         setR({ r[33m:[39m r [33m+[39m delta المدينة [33m/[39m [35m200[39m })[33m;[39m
- [90m 75 |[39m             pointerInteracting[33m.[39mcurrent [33m=[39m e[33m.[39mclientX[33m;[39m[0m
-
-'const' declarations must be initialized
-
-Import trace:
-  Client Component Browser:
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Server Component]
-
-
-
-./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js:72:37
-Parsing ecmascript source code failed
-[0m [90m 70 |[39m                 onMouseMove[33m=[39m{(e) [33m=>[39m {
- [90m 71 |[39m                     [36mif[39m (pointerInteracting[33m.[39mcurrent [33m!==[39m [36mnull[39m) {
-[31m[1m>[22m[39m[90m 72 |[39m                         [36mconst[39m delta المدينة [33m=[39m e[33m.[39mclientX [33m-[39m pointerInteracting[33m.[39mcurrent[33m;[39m
- [90m    |[39m                                     [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
- [90m 73 |[39m                         pointerInteractionMovement[33m.[39mcurrent [33m=[39m delta المدينة[33m;[39m
- [90m 74 |[39m                         setR({ r[33m:[39m r [33m+[39m delta المدينة [33m/[39m [35m200[39m })[33m;[39m
- [90m 75 |[39m             pointerInteracting[33m.[39mcurrent [33m=[39m e[33m.[39mclientX[33m;[39m[0m
-
-Expected a semicolon
-
-Import trace:
-  Client Component Browser:
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Server Component]
-
-
- GET / 500 in 26ms (compile: 14ms, render: 12ms)
-⨯ ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js:72:31
-Parsing ecmascript source code failed
-[0m [90m 70 |[39m                 onMouseMove[33m=[39m{(e) [33m=>[39m {
- [90m 71 |[39m                     [36mif[39m (pointerInteracting[33m.[39mcurrent [33m!==[39m [36mnull[39m) {
-[31m[1m>[22m[39m[90m 72 |[39m                         [36mconst[39m delta المدينة [33m=[39m e[33m.[39mclientX [33m-[39m pointerInteracting[33m.[39mcurrent[33m;[39m
- [90m    |[39m                               [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
- [90m 73 |[39m                         pointerInteractionMovement[33m.[39mcurrent [33m=[39m delta المدينة[33m;[39m
- [90m 74 |[39m                         setR({ r[33m:[39m r [33m+[39m delta المدينة [33m/[39m [35m200[39m })[33m;[39m
- [90m 75 |[39m             pointerInteracting[33m.[39mcurrent [33m=[39m e[33m.[39mclientX[33m;[39m[0m
-
-'const' declarations must be initialized
-
-Import trace:
-  Client Component Browser:
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Server Component]
-
-
-
-./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js:72:37
-Parsing ecmascript source code failed
-[0m [90m 70 |[39m                 onMouseMove[33m=[39m{(e) [33m=>[39m {
- [90m 71 |[39m                     [36mif[39m (pointerInteracting[33m.[39mcurrent [33m!==[39m [36mnull[39m) {
-[31m[1m>[22m[39m[90m 72 |[39m                         [36mconst[39m delta المدينة [33m=[39m e[33m.[39mclientX [33m-[39m pointerInteracting[33m.[39mcurrent[33m;[39m
- [90m    |[39m                                     [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
- [90m 73 |[39m                         pointerInteractionMovement[33m.[39mcurrent [33m=[39m delta المدينة[33m;[39m
- [90m 74 |[39m                         setR({ r[33m:[39m r [33m+[39m delta المدينة [33m/[39m [35m200[39m })[33m;[39m
- [90m 75 |[39m             pointerInteracting[33m.[39mcurrent [33m=[39m e[33m.[39mclientX[33m;[39m[0m
-
-Expected a semicolon
-
-Import trace:
-  Client Component Browser:
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Server Component]
-
-
- GET / 500 in 14ms (compile: 7ms, render: 7ms)
- GET /olap 200 in 46ms (compile: 4ms, render: 42ms)
- GET /api/olap/rollup 500 in 21ms (compile: 9ms, render: 12ms)
- GET /api/olap/slice/2021 500 in 17ms (compile: 7ms, render: 10ms)
-⨯ ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js:72:31
-Parsing ecmascript source code failed
-[0m [90m 70 |[39m                 onMouseMove[33m=[39m{(e) [33m=>[39m {
- [90m 71 |[39m                     [36mif[39m (pointerInteracting[33m.[39mcurrent [33m!==[39m [36mnull[39m) {
-[31m[1m>[22m[39m[90m 72 |[39m                         [36mconst[39m delta المدينة [33m=[39m e[33m.[39mclientX [33m-[39m pointerInteracting[33m.[39mcurrent[33m;[39m
- [90m    |[39m                               [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
- [90m 73 |[39m                         pointerInteractionMovement[33m.[39mcurrent [33m=[39m delta المدينة[33m;[39m
- [90m 74 |[39m                         setR({ r[33m:[39m r [33m+[39m delta المدينة [33m/[39m [35m200[39m })[33m;[39m
- [90m 75 |[39m             pointerInteracting[33m.[39mcurrent [33m=[39m e[33m.[39mclientX[33m;[39m[0m
-
-'const' declarations must be initialized
-
-Import trace:
-  Client Component Browser:
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Server Component]
-
-
-
-./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js:72:37
-Parsing ecmascript source code failed
-[0m [90m 70 |[39m                 onMouseMove[33m=[39m{(e) [33m=>[39m {
- [90m 71 |[39m                     [36mif[39m (pointerInteracting[33m.[39mcurrent [33m!==[39m [36mnull[39m) {
-[31m[1m>[22m[39m[90m 72 |[39m                         [36mconst[39m delta المدينة [33m=[39m e[33m.[39mclientX [33m-[39m pointerInteracting[33m.[39mcurrent[33m;[39m
- [90m    |[39m                                     [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
- [90m 73 |[39m                         pointerInteractionMovement[33m.[39mcurrent [33m=[39m delta المدينة[33m;[39m
- [90m 74 |[39m                         setR({ r[33m:[39m r [33m+[39m delta المدينة [33m/[39m [35m200[39m })[33m;[39m
- [90m 75 |[39m             pointerInteracting[33m.[39mcurrent [33m=[39m e[33m.[39mclientX[33m;[39m[0m
-
-Expected a semicolon
-
-Import trace:
-  Client Component Browser:
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/components/Globe.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Client Component Browser]
-    ./Documents/CollegeProject/covid_dataset_visuvalization/frontend/src/app/page.js [Server Component]
-
-
- GET / 500 in 23ms (compile: 9ms, render: 13ms)
- GET /olap 200 in 35ms (compile: 4ms, render: 32ms)
- GET /api/olap/rollup 500 in 17ms (compile: 7ms, render: 11ms)
- GET /api/olap/slice/2021 500 in 20ms (compile: 13ms, render: 7ms)
- GET /olap 200 in 19ms (compile: 3ms, render: 16ms)
- GET / 200 in 238ms (compile: 75ms, render: 163ms)
- GET /api/olap/scatter-data 500 in 10ms (compile: 3ms, render: 7ms)
- GET /olap 200 in 24ms (compile: 5ms, render: 19ms)
- GET /api/olap/rollup 500 in 49ms (compile: 6ms, render: 44ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 160ms (compile: 58ms, render: 102ms)
- GET /api/olap/rollup 500 in 10ms (compile: 3ms, render: 7ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 82ms (compile: 3ms, render: 78ms)
- GET /api/olap/rollup 500 in 13ms (compile: 3ms, render: 11ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2022 500 in 125ms (compile: 55ms, render: 70ms)
- GET /api/olap/rollup 500 in 6ms (compile: 1790µs, render: 4ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2023 500 in 116ms (compile: 41ms, render: 75ms)
- GET /api/olap/rollup 500 in 9ms (compile: 3ms, render: 6ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 101ms (compile: 42ms, render: 59ms)
- GET /clustering 200 in 129ms (compile: 65ms, render: 64ms)
- GET /outliers 200 in 103ms (compile: 60ms, render: 43ms)
- GET / 200 in 24ms (compile: 6ms, render: 19ms)
- GET /api/olap/scatter-data 500 in 8ms (compile: 2ms, render: 6ms)
- GET /api/olap/scatter-data 500 in 10ms (compile: 1814µs, render: 9ms)
- GET /olap 200 in 23ms (compile: 6ms, render: 18ms)
- GET /api/olap/rollup 500 in 12ms (compile: 2ms, render: 10ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 118ms (compile: 46ms, render: 72ms)
- GET /api/olap/rollup 500 in 119ms (compile: 113ms, render: 5ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 60ms (compile: 1470µs, render: 59ms)
- GET /clustering 200 in 20ms (compile: 4ms, render: 17ms)
- GET /outliers 200 in 15ms (compile: 3ms, render: 12ms)
- GET / 200 in 22ms (compile: 7ms, render: 15ms)
- GET /api/olap/scatter-data 500 in 6ms (compile: 2ms, render: 4ms)
- GET /api/olap/scatter-data 500 in 7ms (compile: 2ms, render: 5ms)
- GET /outliers 200 in 17ms (compile: 4ms, render: 13ms)
- GET /clustering 200 in 19ms (compile: 2ms, render: 17ms)
- GET / 200 in 21ms (compile: 6ms, render: 14ms)
- GET /api/olap/scatter-data 500 in 6ms (compile: 3ms, render: 3ms)
- GET /api/olap/scatter-data 500 in 5ms (compile: 1515µs, render: 4ms)
- GET /olap 200 in 18ms (compile: 3ms, render: 14ms)
- GET /api/olap/rollup 500 in 8ms (compile: 2ms, render: 6ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 92ms (compile: 37ms, render: 55ms)
- GET /api/olap/rollup 500 in 6ms (compile: 1501µs, render: 5ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 48ms (compile: 1897µs, render: 46ms)
- GET /outliers 200 in 16ms (compile: 3ms, render: 12ms)
- GET / 200 in 17ms (compile: 5ms, render: 12ms)
- GET /api/olap/scatter-data 500 in 6ms (compile: 1998µs, render: 4ms)
- GET /api/olap/scatter-data 500 in 6ms (compile: 1671µs, render: 4ms)
- GET /olap 200 in 22ms (compile: 9ms, render: 13ms)
- GET /api/olap/rollup 500 in 7ms (compile: 3ms, render: 5ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 95ms (compile: 40ms, render: 55ms)
- GET /api/olap/rollup 500 in 6ms (compile: 3ms, render: 4ms)
-Error: Route "/api/olap/slice/[year]" used `params.year`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
-    at GET (src/app/api/olap/slice/[year]/route.js:5:11)
-  3 |
-  4 | export async function GET(request, { params }) {
-> 5 |   const { year } = params;
-    |           ^
-  6 |   try {
-  7 |     const sql = `
-  8 |       SELECT 
- GET /api/olap/slice/2021 500 in 47ms (compile: 1306µs, render: 46ms)
- GET /clustering 200 in 17ms (compile: 4ms, render: 13ms)
- GET /outliers 200 in 13ms (compile: 3ms, render: 10ms)
+✓ Ready in 429ms
+ GET /olap 200 in 355ms (compile: 211ms, render: 143ms)
+ GET /api/olap/rollup 200 in 1605ms (compile: 58ms, render: 1547ms)
+ GET /api/olap/slice/2021 200 in 1666ms (compile: 558ms, render: 1107ms)
+ GET /api/olap/scatter-data 200 in 257ms (compile: 22ms, render: 234ms)
+ GET / 200 in 92ms (compile: 30ms, render: 62ms)
+ GET /api/olap/scatter-data 200 in 1300ms (compile: 4ms, render: 1296ms)
+ GET /olap 200 in 27ms (compile: 6ms, render: 21ms)
+ GET /api/olap/rollup 200 in 1120ms (compile: 5ms, render: 1115ms)
+ GET /api/olap/rollup 200 in 273ms (compile: 4ms, render: 269ms)
+ GET /api/olap/slice/2021 200 in 1469ms (compile: 18ms, render: 1452ms)
+ GET /api/olap/slice/2021 200 in 223ms (compile: 16ms, render: 207ms)
+ GET /api/olap/slice/2022 200 in 1487ms (compile: 11ms, render: 1475ms)
+ GET /api/olap/rollup 200 in 1549ms (compile: 3ms, render: 1546ms)
+ GET /api/olap/slice/2020 200 in 300ms (compile: 14ms, render: 287ms)
+ GET /api/olap/rollup 200 in 319ms (compile: 2ms, render: 317ms)
+ GET /api/olap/slice/2023 200 in 252ms (compile: 12ms, render: 239ms)
+ GET /api/olap/rollup 200 in 316ms (compile: 3ms, render: 314ms)
+ GET /clustering 200 in 43ms (compile: 25ms, render: 17ms)
+ GET /outliers 200 in 39ms (compile: 24ms, render: 15ms)
+ GET /clustering 200 in 15ms (compile: 3ms, render: 13ms)
+ GET /olap 200 in 20ms (compile: 8ms, render: 12ms)
+ GET /api/olap/slice/2021 200 in 1067ms (compile: 15ms, render: 1052ms)
+ GET /api/olap/rollup 200 in 1107ms (compile: 2ms, render: 1105ms)
+ GET /api/olap/slice/2021 200 in 247ms (compile: 13ms, render: 234ms)
+ GET /api/olap/rollup 200 in 302ms (compile: 1820µs, render: 300ms)
+ GET /api/olap/slice/2022 200 in 1297ms (compile: 12ms, render: 1285ms)
+ GET /api/olap/rollup 200 in 1397ms (compile: 1788µs, render: 1396ms)
+ GET /api/olap/slice/2021 200 in 251ms (compile: 11ms, render: 240ms)
+ GET /api/olap/rollup 200 in 319ms (compile: 2ms, render: 317ms)
+ GET /clustering 200 in 15ms (compile: 2ms, render: 13ms)
+ GET /outliers 200 in 16ms (compile: 2ms, render: 14ms)
+ GET /clustering 200 in 21ms (compile: 3ms, render: 18ms)
+ GET /olap 200 in 15ms (compile: 3ms, render: 12ms)
+ GET /api/olap/rollup 200 in 2.1s (compile: 1913µs, render: 2.1s)
+ GET /api/olap/slice/2021 200 in 2.1s (compile: 11ms, render: 2.0s)
+ GET /api/olap/slice/2021 200 in 256ms (compile: 12ms, render: 244ms)
+ GET /api/olap/rollup 200 in 334ms (compile: 3ms, render: 331ms)
+ GET /clustering 200 in 14ms (compile: 2ms, render: 12ms)
+ GET / 200 in 19ms (compile: 6ms, render: 13ms)
+ GET /api/olap/scatter-data 200 in 995ms (compile: 2ms, render: 992ms)
+ GET /api/olap/scatter-data 200 in 216ms (compile: 3ms, render: 213ms)
+✓ Compiled in 37ms
+ GET /api/olap/slice/2021 200 in 1088ms (compile: 13ms, render: 1074ms)
+ GET /api/olap/dice?continent=Europe&start_year=2020&end_year=2021 200 in 1205ms (compile: 131ms, render: 1075ms)
+ GET /api/olap/rollup 200 in 1230ms (compile: 1846µs, render: 1228ms)
+ GET /api/olap/drilldown/United%20States 200 in 1906ms (compile: 629ms, render: 1277ms)
+✓ Compiled in 10ms
+ GET /api/olap/slice/2022 200 in 1114ms (compile: 20ms, render: 1093ms)
+ GET /api/olap/slice/2023 200 in 1089ms (compile: 3ms, render: 1086ms)
+ GET /api/olap/slice/2020 200 in 1481ms (compile: 24ms, render: 1456ms)
+ GET /api/olap/slice/2021 200 in 1022ms (compile: 19ms, render: 1002ms)
+ GET /api/olap/slice/2022 200 in 223ms (compile: 23ms, render: 200ms)
+ GET /api/olap/slice/2023 200 in 264ms (compile: 24ms, render: 240ms)
+ GET /api/olap/slice/2024 200 in 1159ms (compile: 22ms, render: 1137ms)
+ GET /api/olap/slice/2023 200 in 1130ms (compile: 22ms, render: 1108ms)
+ GET /api/olap/slice/2024 200 in 216ms (compile: 19ms, render: 197ms)
+ GET /api/olap/slice/2023 200 in 1608ms (compile: 20ms, render: 1588ms)
+ GET /api/olap/dice?continent=Europe&start_year=2022&end_year=2021 200 in 1139ms (compile: 66ms, render: 1073ms)
+ GET /api/olap/dice?continent=Africa&start_year=2022&end_year=2021 200 in 149ms (compile: 2ms, render: 147ms)
+ GET /api/olap/dice?continent=Africa&start_year=2020&end_year=2021 200 in 193ms (compile: 3ms, render: 190ms)
+ GET /api/olap/dice?continent=Africa&start_year=2020&end_year=2022 200 in 186ms (compile: 1673µs, render: 184ms)
+ GET /api/olap/dice?continent=Europe&start_year=2020&end_year=2022 200 in 194ms (compile: 1997µs, render: 192ms)
+ GET /api/olap/drilldown/nited%20States 200 in 921ms (compile: 19ms, render: 902ms)
+ GET /api/olap/drilldown/ited%20States 200 in 939ms (compile: 2ms, render: 937ms)
+ GET /api/olap/drilldown/%20States 200 in 933ms (compile: 1795µs, render: 932ms)
+ GET /api/olap/drilldown/I 200 in 158ms (compile: 16ms, render: 143ms)
+ GET /api/olap/drilldown/In 200 in 145ms (compile: 2ms, render: 143ms)
+ GET /api/olap/drilldown/Ind 200 in 149ms (compile: 2ms, render: 147ms)
+ GET /api/olap/drilldown/Indi 200 in 143ms (compile: 1954µs, render: 141ms)
+ GET /api/olap/drilldown/India 200 in 445ms (compile: 17ms, render: 428ms)
+ GET /api/olap/drilldown/I 200 in 157ms (compile: 15ms, render: 142ms)
+ GET /api/olap/drilldown/In 200 in 144ms (compile: 2ms, render: 142ms)
+ GET /api/olap/drilldown/Ind 200 in 160ms (compile: 14ms, render: 146ms)
+ GET /api/olap/drilldown/Inda 200 in 145ms (compile: 2ms, render: 143ms)
+ GET /api/olap/drilldown/Indai 200 in 144ms (compile: 3ms, render: 141ms)
+ GET /api/olap/drilldown/Inda 200 in 162ms (compile: 17ms, render: 145ms)
+ GET /api/olap/drilldown/Ind 200 in 144ms (compile: 1964µs, render: 142ms)
+ GET /api/olap/drilldown/Indi 200 in 148ms (compile: 1816µs, render: 146ms)
+ GET /api/olap/drilldown/India 200 in 431ms (compile: 1855µs, render: 429ms)
+ GET /api/olap/drilldown/a 200 in 159ms (compile: 14ms, render: 144ms)
+ GET /api/olap/drilldown/af 200 in 148ms (compile: 2ms, render: 146ms)
+ GET /api/olap/drilldown/afd 200 in 144ms (compile: 1807µs, render: 143ms)
+ GET /olap 200 in 202ms (compile: 77ms, render: 125ms)
+ GET /olap 200 in 70ms (compile: 4ms, render: 66ms)
+ GET /olap 200 in 77ms (compile: 3ms, render: 74ms)
+ GET /olap 200 in 59ms (compile: 3ms, render: 56ms)
+ GET /olap 200 in 59ms (compile: 3ms, render: 56ms)
+ GET /olap 200 in 60ms (compile: 3ms, render: 57ms)
+ GET /olap 200 in 59ms (compile: 3ms, render: 56ms)
+ GET /olap 200 in 62ms (compile: 4ms, render: 58ms)
+ GET /olap 200 in 59ms (compile: 4ms, render: 56ms)
+ GET /olap 200 in 57ms (compile: 4ms, render: 53ms)
+ GET /olap 200 in 69ms (compile: 3ms, render: 66ms)
+ GET /olap 200 in 72ms (compile: 3ms, render: 69ms)
+ GET /olap 200 in 75ms (compile: 3ms, render: 72ms)
+ GET /olap 200 in 79ms (compile: 3ms, render: 76ms)
+ GET /olap 200 in 82ms (compile: 3ms, render: 78ms)
+ GET /olap 200 in 82ms (compile: 3ms, render: 79ms)
+ GET /olap 200 in 82ms (compile: 3ms, render: 79ms)
+ GET /olap 200 in 79ms (compile: 3ms, render: 75ms)
+ GET /olap 200 in 77ms (compile: 3ms, render: 74ms)
+ GET /olap 200 in 76ms (compile: 3ms, render: 73ms)
+ GET /olap 200 in 77ms (compile: 3ms, render: 74ms)
+ GET /olap 200 in 79ms (compile: 3ms, render: 76ms)
+ GET /olap 200 in 82ms (compile: 3ms, render: 79ms)
+ GET /olap 200 in 65ms (compile: 3ms, render: 62ms)
+ GET /olap 200 in 46ms (compile: 3ms, render: 42ms)
+ GET /olap 200 in 26ms (compile: 3ms, render: 23ms)
+ GET /api/olap/drilldown/af 200 in 1024ms (compile: 48ms, render: 976ms)
+ GET /api/olap/drilldown/a 200 in 961ms (compile: 2ms, render: 959ms)
+ GET /api/olap/drilldown/Af 200 in 151ms (compile: 3ms, render: 149ms)
+ GET /api/olap/drilldown/Afg 200 in 165ms (compile: 18ms, render: 147ms)
+ GET /api/olap/drilldown/Afga 200 in 150ms (compile: 2ms, render: 148ms)
+ GET /api/olap/drilldown/A 200 in 981ms (compile: 17ms, render: 964ms)
+ GET /api/olap/drilldown/Afgan 200 in 164ms (compile: 21ms, render: 143ms)
+ GET /api/olap/drilldown/Afgani 200 in 149ms (compile: 1990µs, render: 147ms)
+ GET /api/olap/drilldown/Afganis 200 in 158ms (compile: 2ms, render: 156ms)
+ GET /api/olap/drilldown/Afganist 200 in 165ms (compile: 17ms, render: 149ms)
+ GET /api/olap/drilldown/Afganista 200 in 144ms (compile: 2ms, render: 142ms)
+ GET /api/olap/drilldown/Afganistan 200 in 145ms (compile: 2ms, render: 142ms)
+ GET /api/olap/drilldown/Afghanistan 200 in 441ms (compile: 16ms, render: 425ms)
+✓ Compiled in 106ms
+ GET /olap 200 in 44ms (compile: 4ms, render: 41ms)
+ GET /api/olap/dice?continent=Europe&start_year=2020&end_year=2021 200 in 1243ms (compile: 25ms, render: 1218ms)
+ GET /api/olap/slice/2021 200 in 1329ms (compile: 69ms, render: 1260ms)
+ GET /api/olap/rollup 200 in 1491ms (compile: 36ms, render: 1455ms)
+ GET /api/olap/drilldown/United%20States 200 in 1536ms (compile: 17ms, render: 1519ms)
+ GET /ml-insights 200 in 503ms (compile: 466ms, render: 37ms)
+ GET / 200 in 231ms (compile: 70ms, render: 162ms)
+ GET /api/olap/scatter-data 200 in 1040ms (compile: 29ms, render: 1010ms)
+ GET /ml-insights 200 in 31ms (compile: 4ms, render: 27ms)
+ GET /ml-insights 200 in 176ms (compile: 55ms, render: 122ms)
+ GET /ml-insights 200 in 83ms (compile: 3ms, render: 80ms)
+ GET /ml-insights 200 in 70ms (compile: 3ms, render: 68ms)
+ GET /ml-insights 200 in 84ms (compile: 1765µs, render: 82ms)
+ GET /ml-insights 200 in 97ms (compile: 3ms, render: 94ms)
+ GET /ml-insights 200 in 96ms (compile: 1815µs, render: 94ms)
+ GET /ml-insights 200 in 93ms (compile: 4ms, render: 89ms)
+ GET /ml-insights 200 in 78ms (compile: 4ms, render: 74ms)
+ GET /ml-insights 200 in 63ms (compile: 3ms, render: 59ms)
+ GET /ml-insights 200 in 61ms (compile: 1622µs, render: 60ms)
+ GET /ml-insights 200 in 60ms (compile: 1769µs, render: 58ms)
+ GET /ml-insights 200 in 65ms (compile: 1622µs, render: 63ms)
+ GET /ml-insights 200 in 65ms (compile: 2ms, render: 63ms)
+ GET /ml-insights 200 in 66ms (compile: 1724µs, render: 64ms)
+ GET /ml-insights 200 in 66ms (compile: 2ms, render: 64ms)
+ GET /ml-insights 200 in 63ms (compile: 1833µs, render: 61ms)
+ GET /ml-insights 200 in 68ms (compile: 1806µs, render: 66ms)
+ GET /ml-insights 200 in 68ms (compile: 1821µs, render: 66ms)
+ GET /ml-insights 200 in 66ms (compile: 1878µs, render: 64ms)
+ GET /ml-insights 200 in 67ms (compile: 1842µs, render: 65ms)
+ GET /ml-insights 200 in 68ms (compile: 1688µs, render: 67ms)
+ GET /ml-insights 200 in 76ms (compile: 1699µs, render: 74ms)
+ GET /ml-insights 200 in 80ms (compile: 2ms, render: 78ms)
+ GET /ml-insights 200 in 82ms (compile: 2ms, render: 79ms)
+ GET /ml-insights 200 in 77ms (compile: 2ms, render: 75ms)
+ GET /ml-insights 200 in 54ms (compile: 3ms, render: 51ms)
+ GET /ml-insights 200 in 36ms (compile: 2ms, render: 34ms)
+ GET /ml-insights 200 in 19ms (compile: 1900µs, render: 17ms)
+✓ Compiled in 5ms
+ GET /olap 200 in 166ms (compile: 48ms, render: 118ms)
+ GET /api/olap/countries 200 in 1328ms (compile: 111ms, render: 1216ms)
+ GET /api/olap/dice?continent=Europe&start_year=2020&end_year=2021 200 in 2.2s (compile: 19ms, render: 2.2s)
+ GET /api/olap/rollup 200 in 2.2s (compile: 28ms, render: 2.2s)
+ GET /api/olap/slice/2021 200 in 2.2s (compile: 35ms, render: 2.2s)
+ GET /api/olap/drilldown/United%20States 200 in 2.5s (compile: 33ms, render: 2.5s)
+ GET /api/olap/drilldown/Tunisia 200 in 1444ms (compile: 76ms, render: 1368ms)
+ GET /api/olap/drilldown/India 200 in 495ms (compile: 20ms, render: 474ms)
+ GET /clustering 200 in 181ms (compile: 134ms, render: 47ms)
+ GET /outliers 200 in 88ms (compile: 54ms, render: 35ms)
+ GET /ml-insights 200 in 17ms (compile: 1953µs, render: 15ms)

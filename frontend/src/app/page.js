@@ -14,11 +14,21 @@ export default function Dashboard() {
   useEffect(() => {
     getScatterData()
       .then(res => {
-        setData(res.data);
+        // Generating pseudo-coordinates for the globe based on country name length/char codes to distribute them visually
+        const processedData = res.data.map(d => {
+          const charCodeSum = d.country_name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+          return {
+            ...d,
+            lat: (charCodeSum % 180) - 90, // -90 to 90
+            lng: ((charCodeSum * 7) % 360) - 180, // -180 to 180
+            size: Math.min(0.2, Math.max(0.02, (d.total_cases || 0) / 100000000)) // Normalize size for globe
+          };
+        });
+        setData(processedData);
         setLoading(false);
       })
       .catch(err => {
-        // Fallback dummy data for visualization
+        // Fallback dummy data for visualization in case of DB failure
         setData([
           { stringency_index: 40, total_cases: 100000, new_vaccinations: 50000, country_name: 'Country A', continent: 'Asia', lat: 35, lng: 100, size: 0.1 },
           { stringency_index: 70, total_cases: 500000, new_vaccinations: 200000, country_name: 'Country B', continent: 'Europe', lat: 48, lng: 10, size: 0.08 },

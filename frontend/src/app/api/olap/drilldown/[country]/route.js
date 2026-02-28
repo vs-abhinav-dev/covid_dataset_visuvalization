@@ -2,7 +2,7 @@ import { query } from '@/lib/db';
 import { NextResponse } from 'next/server';
 
 export async function GET(request, { params }) {
-  const { country } = params;
+  const { country } = await params;
   try {
     const sql = `
       SELECT 
@@ -12,7 +12,7 @@ export async function GET(request, { params }) {
       FROM fact_covid_stats f
       JOIN dim_country c ON f.country_id = c.country_id
       JOIN dim_date d ON f.date_id = d.date_id
-      WHERE c.country_name = $1
+      WHERE c.location = $1
       ORDER BY d.date;
     `;
     const result = await query(sql, [country]);
