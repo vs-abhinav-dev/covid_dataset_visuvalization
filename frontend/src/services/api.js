@@ -10,5 +10,6 @@ export const getSliceYear = (year) => api.get(`/slice/${year}`);
 export const getDice = (params) => api.get('/dice', { params });
 export const getCorrelation = () => api.get('/correlation');
 export const getScatterData = () => api.get('/scatter-data');
+export const getClustering = (k) => api.get('/clustering', { params: { k } });
 
 export default api;
