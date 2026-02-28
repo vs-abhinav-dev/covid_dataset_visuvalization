@@ -10,14 +10,14 @@ export async function GET(request) {
   try {
     const sql = `
       SELECT 
-        c.country_name,
+        c.location as country_name,
         d.year,
         SUM(f.new_cases) as total_new_cases
       FROM fact_covid_stats f
       JOIN dim_country c ON f.country_id = c.country_id
       JOIN dim_date d ON f.date_id = d.date_id
       WHERE c.continent = $1 AND d.year BETWEEN $2 AND $3
-      GROUP BY c.country_name, d.year
+      GROUP BY c.location, d.year
       ORDER BY d.year, total_new_cases DESC;
     `;
     const result = await query(sql, [continent, parseInt(startYear), parseInt(endYear)]);

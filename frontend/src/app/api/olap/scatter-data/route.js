@@ -5,7 +5,7 @@ export async function GET() {
   try {
     const sql = `
       SELECT 
-        c.country_name,
+        c.location as country_name,
         c.continent,
         f.stringency_index,
         f.total_cases,
@@ -18,6 +18,7 @@ export async function GET() {
     const result = await query(sql);
     return NextResponse.json(result.rows);
   } catch (error) {
+    console.error('API Error (Scatter Data):', error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
