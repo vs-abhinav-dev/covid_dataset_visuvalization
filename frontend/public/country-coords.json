@@ -970,5 +970,89 @@
   "Afghanistan": {
     "lat": 33,
     "lng": 65
+  },
+  "Bolivia": {
+    "lat": -16.29,
+    "lng": -63.58
+  },
+  "Czechia": {
+    "lat": 49.81,
+    "lng": 15.47
+  },
+  "Democratic Republic of Congo": {
+    "lat": -4.03,
+    "lng": 21.75
+  },
+  "England": {
+    "lat": 52.35,
+    "lng": -1.17
+  },
+  "Iran": {
+    "lat": 32.42,
+    "lng": 53.68
+  },
+  "Laos": {
+    "lat": 19.85,
+    "lng": 102.49
+  },
+  "Libya": {
+    "lat": 26.33,
+    "lng": 17.22
+  },
+  "Moldova": {
+    "lat": 47.41,
+    "lng": 28.36
+  },
+  "North Korea": {
+    "lat": 40.33,
+    "lng": 127.51
+  },
+  "North Macedonia": {
+    "lat": 41.6,
+    "lng": 21.74
+  },
+  "Northern Ireland": {
+    "lat": 54.78,
+    "lng": -6.49
+  },
+  "Palestine": {
+    "lat": 31.95,
+    "lng": 35.23
+  },
+  "Russia": {
+    "lat": 61.52,
+    "lng": 105.31
+  },
+  "Scotland": {
+    "lat": 56.49,
+    "lng": -4.2
+  },
+  "South Korea": {
+    "lat": 35.9,
+    "lng": 127.76
+  },
+  "Syria": {
+    "lat": 34.8,
+    "lng": 38.99
+  },
+  "Taiwan": {
+    "lat": 23.69,
+    "lng": 120.96
+  },
+  "Tanzania": {
+    "lat": -6.36,
+    "lng": 34.88
+  },
+  "Venezuela": {
+    "lat": 6.42,
+    "lng": -66.58
+  },
+  "Vietnam": {
+    "lat": 14.05,
+    "lng": 108.27
+  },
+  "Wales": {
+    "lat": 52.13,
+    "lng": -3.78
   }
 }

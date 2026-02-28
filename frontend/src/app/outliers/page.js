@@ -7,21 +7,21 @@ import { getOutliers } from '@/services/api';
 const Plot = dynamic(() => import('react-plotly.js'), { ssr: false });
 
 const METRICS = [
-  { key: 'death_rate',       label: 'Death Rate (deaths / cases)' },
+  { key: 'death_rate', label: 'Death Rate (deaths / cases)' },
   { key: 'cases_per_capita', label: 'Cases per Capita' },
   { key: 'excess_mortality', label: 'Excess Mortality' },
-  { key: 'icu_per_capita',   label: 'ICU Patients per Capita' },
+  { key: 'icu_per_capita', label: 'ICU Patients per Capita' },
 ];
 
 const CONTINENTS = ['', 'Africa', 'Asia', 'Europe', 'North America', 'Oceania', 'South America'];
 
 export default function OutliersPage() {
-  const [metric, setMetric]         = useState('death_rate');
-  const [continent, setContinent]   = useState('');
-  const [method, setMethod]         = useState('IQR');   // IQR | Z-Score
-  const [logScale, setLogScale]     = useState(false);
-  const [loading, setLoading]       = useState(true);
-  const [error, setError]           = useState(null);
+  const [metric, setMetric] = useState('death_rate');
+  const [continent, setContinent] = useState('');
+  const [method, setMethod] = useState('IQR');   // IQR | Z-Score
+  const [logScale, setLogScale] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [responseData, setResponseData] = useState(null);
 
   const fetchData = useCallback(() => {
@@ -44,23 +44,23 @@ export default function OutliersPage() {
 
   const isOutlierKey = method === 'IQR' ? 'isOutlier_IQR' : 'isOutlier_Z';
 
-  const data        = responseData?.data        || [];
-  const meta        = responseData?.metadata    || {};
-  const thresholds  = meta.thresholds           || {};
+  const data = responseData?.data || [];
+  const meta = responseData?.metadata || {};
+  const thresholds = meta.thresholds || {};
 
-  const outliers  = data.filter(d => d[isOutlierKey]);
-  const normals   = data.filter(d => !d[isOutlierKey]);
+  const outliers = data.filter(d => d[isOutlierKey]);
+  const normals = data.filter(d => !d[isOutlierKey]);
 
   const validValues = data.map(d => d.metric_value).filter(v => v !== null && isFinite(v));
 
-  const cardStyle = { background: '#1e293b', borderRadius: '1rem', padding: '1.5rem', marginBottom: '1.5rem' };
-  const selectStyle = { padding: '0.4rem 0.8rem', borderRadius: '0.5rem', background: '#334155', color: '#f1f5f9', border: '1px solid #475569', cursor: 'pointer' };
-  const labelStyle    = { color: '#94a3b8', fontSize: '0.85rem', marginRight: '0.5rem' };
+  const cardStyle = { background: 'rgba(255, 255, 255, 0.75)', border: '1px solid rgba(0,0,0,0.08)', borderRadius: '1rem', padding: '1.5rem', marginBottom: '1.5rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)' };
+  const selectStyle = { padding: '0.4rem 0.8rem', borderRadius: '0.5rem', background: '#ffffff', color: '#0f172a', border: '1px solid #cbd5e1', cursor: 'pointer' };
+  const labelStyle = { color: '#64748b', fontSize: '0.85rem', marginRight: '0.5rem' };
 
   return (
-    <div style={{ padding: '2rem', color: '#f1f5f9' }}>
+    <div style={{ padding: '2rem', color: '#0f172a' }}>
       <h1 style={{ marginBottom: '0.25rem' }}>Outlier Detection Dashboard</h1>
-      <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>
+      <p style={{ color: '#64748b', marginBottom: '1.5rem' }}>
         Statistical anomaly detection using <b>IQR</b> (Tukey Fence) and <b>Z-Score</b> methods across COVID-19 epidemiological metrics.
       </p>
 
@@ -108,15 +108,15 @@ export default function OutliersPage() {
             ] : []),
           ].map(stat => (
             <div key={stat.label} style={{ ...cardStyle, marginBottom: 0, flex: '1 0 120px', textAlign: 'center' }}>
-              <div style={{ fontSize: '1.4rem', fontWeight: 700, color: stat.color || '#38bdf8' }}>{stat.value}</div>
-              <div style={{ fontSize: '0.75rem', color: '#94a3b8', marginTop: '0.25rem' }}>{stat.label}</div>
+              <div style={{ fontSize: '1.4rem', fontWeight: 700, color: stat.color || '#0ea5e9' }}>{stat.value}</div>
+              <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '0.25rem' }}>{stat.label}</div>
             </div>
           ))}
         </div>
       )}
 
-      {loading && <div style={{ textAlign: 'center', padding: '4rem', color: '#94a3b8' }}>Running outlier detection…</div>}
-      {error   && <div style={{ color: '#f87171', padding: '1rem' }}>{error}</div>}
+      {loading && <div style={{ textAlign: 'center', padding: '4rem', color: '#64748b' }}>Running outlier detection…</div>}
+      {error && <div style={{ color: '#ef4444', padding: '1rem' }}>{error}</div>}
 
       {!loading && !error && data.length > 0 && (
         <>
@@ -141,8 +141,8 @@ export default function OutliersPage() {
                 autosize: true,
                 paper_bgcolor: 'rgba(0,0,0,0)',
                 plot_bgcolor: 'rgba(0,0,0,0)',
-                font: { color: '#f8fafc' },
-                yaxis: { title: metricLabel, type: logScale ? 'log' : 'linear', gridcolor: '#334155' },
+                font: { color: '#0f172a', family: 'Outfit' },
+                yaxis: { title: metricLabel, type: logScale ? 'log' : 'linear', gridcolor: 'rgba(0,0,0,0.05)' },
                 margin: { t: 20, b: 40, l: 80, r: 20 },
                 showlegend: false,
               }}
@@ -181,9 +181,9 @@ export default function OutliersPage() {
                 autosize: true,
                 paper_bgcolor: 'rgba(0,0,0,0)',
                 plot_bgcolor: 'rgba(0,0,0,0)',
-                font: { color: '#f8fafc' },
-                xaxis: { title: 'GDP per Capita (log)', type: 'log', gridcolor: '#334155' },
-                yaxis: { title: 'Death Rate', type: logScale ? 'log' : 'linear', gridcolor: '#334155' },
+                font: { color: '#0f172a', family: 'Outfit' },
+                xaxis: { title: 'GDP per Capita (log)', type: 'log', gridcolor: 'rgba(0,0,0,0.05)' },
+                yaxis: { title: 'Death Rate', type: logScale ? 'log' : 'linear', gridcolor: 'rgba(0,0,0,0.05)' },
                 legend: { orientation: 'h', y: 1.1 },
                 hovermode: 'closest',
                 margin: { t: 20, b: 60, l: 80, r: 20 },
@@ -197,14 +197,14 @@ export default function OutliersPage() {
           <div style={cardStyle}>
             <h3 style={{ marginTop: 0 }}>⚠ Flagged Outlier Countries ({outliers.length})</h3>
             {outliers.length === 0 ? (
-              <p style={{ color: '#94a3b8' }}>No outliers detected for the current selection.</p>
+              <p style={{ color: '#64748b' }}>No outliers detected for the current selection.</p>
             ) : (
-              <div style={{ overflowY: 'auto', maxHeight: '400px' }}>
+              <div style={{ overflowY: 'auto', maxHeight: '400px', border: '1px solid rgba(0,0,0,0.08)', borderRadius: '0.5rem' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.875rem' }}>
-                  <thead style={{ position: 'sticky', top: 0, background: '#1e293b' }}>
+                  <thead style={{ position: 'sticky', top: 0, background: '#f8fafc', zIndex: 1 }}>
                     <tr>
                       {['Country', 'Continent', 'Death Rate', 'Cases/Capita', 'ICU/Capita', 'Excess Mortality', 'IQR Flag', 'Z Flag'].map(h => (
-                        <th key={h} style={{ padding: '0.6rem 1rem', textAlign: 'left', color: '#94a3b8', borderBottom: '1px solid #334155', whiteSpace: 'nowrap' }}>{h}</th>
+                        <th key={h} style={{ padding: '0.6rem 1rem', textAlign: 'left', color: '#64748b', borderBottom: '1px solid #cbd5e1', whiteSpace: 'nowrap' }}>{h}</th>
                       ))}
                     </tr>
                   </thead>
@@ -212,25 +212,25 @@ export default function OutliersPage() {
                     {outliers
                       .sort((a, b) => (b.metric_value || 0) - (a.metric_value || 0))
                       .map((d, i) => (
-                        <tr key={d.country_name} style={{ background: i % 2 === 0 ? '#0f172a' : 'transparent' }}>
+                        <tr key={d.country_name} style={{ background: i % 2 === 0 ? 'rgba(0,0,0,0.02)' : 'transparent', borderBottom: '1px solid rgba(0,0,0,0.04)' }}>
                           <td style={{ padding: '0.5rem 1rem', fontWeight: 600 }}>{d.country_name}</td>
-                          <td style={{ padding: '0.5rem 1rem', color: '#94a3b8' }}>{d.continent}</td>
+                          <td style={{ padding: '0.5rem 1rem', color: '#64748b' }}>{d.continent}</td>
                           <td style={{ padding: '0.5rem 1rem' }}>{d.death_rate !== null ? `${(d.death_rate * 100).toFixed(3)}%` : '—'}</td>
                           <td style={{ padding: '0.5rem 1rem' }}>{d.cases_per_capita !== null ? d.cases_per_capita.toExponential(3) : '—'}</td>
                           <td style={{ padding: '0.5rem 1rem' }}>{d.icu_per_capita !== null ? d.icu_per_capita.toExponential(3) : '—'}</td>
                           <td style={{ padding: '0.5rem 1rem' }}>{d.excess_mortality !== null ? d.excess_mortality.toFixed(2) : '—'}</td>
                           <td style={{ padding: '0.5rem 1rem' }}>
-                            <span style={{ background: d.isOutlier_IQR ? '#7f1d1d' : '#14532d', color: d.isOutlier_IQR ? '#f87171' : '#86efac', padding: '0.15rem 0.5rem', borderRadius: '0.5rem' }}>
+                            <span style={{ background: d.isOutlier_IQR ? '#fee2e2' : '#dcfce7', color: d.isOutlier_IQR ? '#ef4444' : '#15803d', padding: '0.15rem 0.5rem', borderRadius: '0.5rem', fontWeight: 500 }}>
                               {d.isOutlier_IQR ? '⚠ Yes' : 'No'}
                             </span>
                           </td>
                           <td style={{ padding: '0.5rem 1rem' }}>
-                            <span style={{ background: d.isOutlier_Z ? '#7f1d1d' : '#14532d', color: d.isOutlier_Z ? '#f87171' : '#86efac', padding: '0.15rem 0.5rem', borderRadius: '0.5rem' }}>
+                            <span style={{ background: d.isOutlier_Z ? '#fee2e2' : '#dcfce7', color: d.isOutlier_Z ? '#ef4444' : '#15803d', padding: '0.15rem 0.5rem', borderRadius: '0.5rem', fontWeight: 500 }}>
                               {d.isOutlier_Z ? '⚠ Yes' : 'No'}
                             </span>
                           </td>
                         </tr>
-                    ))}
+                      ))}
                   </tbody>
                 </table>
               </div>

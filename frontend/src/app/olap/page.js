@@ -99,24 +99,19 @@ export default function OlapPage() {
             x: years,
             y: continents,
             type: 'surface',
-            colorscale: [
-              ['0.0', '#060913'],
-              ['0.2', '#0f172a'],
-              ['0.5', '#1e3a8a'],
-              ['0.8', '#00e5ff'],
-              ['1.0', '#ffffff']
-            ],
-            hoverongaps: false
+            colorscale: 'YlOrRd', // Built-in Yellow-Orange-Red scale which is very readable on light mode
+            hoverongaps: false,
+            hovertemplate: 'Continent: %{y}<br>Year: %{x}<br>Cases: %{z:,.0f}<extra></extra>'
           }]}
           layout={{
             autosize: true,
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: 'rgba(0,0,0,0)',
-            font: { color: '#e2e8f0', family: 'Outfit' },
+            font: { color: '#0f172a', family: 'Outfit' },
             scene: {
-              xaxis: { title: 'Year', gridcolor: 'rgba(255,255,255,0.05)' },
-              yaxis: { title: 'Continent', gridcolor: 'rgba(255,255,255,0.05)' },
-              zaxis: { title: 'Total Cases', gridcolor: 'rgba(255,255,255,0.05)' },
+              xaxis: { title: 'Year', gridcolor: 'rgba(0,0,0,0.05)' },
+              yaxis: { title: 'Continent', gridcolor: 'rgba(0,0,0,0.05)' },
+              zaxis: { title: 'Total Cases', gridcolor: 'rgba(0,0,0,0.05)' },
               camera: { eye: { x: 1.5, y: 1.5, z: 1.2 } }
             },
             margin: { t: 20, b: 0, l: 0, r: 0 },
@@ -155,15 +150,15 @@ export default function OlapPage() {
             autosize: true,
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: 'rgba(0,0,0,0)',
-            font: { color: '#e2e8f0', family: 'Outfit' },
+            font: { color: '#475569', family: 'Outfit' }, // Darker font for light theme
             xaxis: {
               title: 'Country',
-              gridcolor: 'rgba(255,255,255,0.05)',
+              gridcolor: 'rgba(0,0,0,0.05)', // Subtle dark grid
               tickangle: -90,
               tickfont: { size: 9 },
               fixedrange: false
             },
-            yaxis: { title: 'Total New Cases', gridcolor: 'rgba(255,255,255,0.05)', fixedrange: false },
+            yaxis: { title: 'Total New Cases', gridcolor: 'rgba(0,0,0,0.05)', fixedrange: false }, // Subtle dark grid
             margin: { t: 20, b: 120, l: 80, r: 20 },
             dragmode: 'pan',
           }}
@@ -201,11 +196,11 @@ export default function OlapPage() {
             autosize: true,
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: 'rgba(0,0,0,0)',
-            font: { color: '#e2e8f0', family: 'Outfit' },
-            xaxis: { title: 'Country', gridcolor: 'rgba(255,255,255,0.05)', tickangle: -90, tickfont: { size: 9 } },
-            yaxis: { title: 'Total New Cases', gridcolor: 'rgba(255,255,255,0.05)', tickformat: '.2s' },
+            font: { color: '#0f172a', family: 'Outfit' },
+            xaxis: { title: 'Country', gridcolor: 'rgba(0,0,0,0.05)', tickangle: -90, tickfont: { size: 9 } },
+            yaxis: { title: 'Total New Cases', gridcolor: 'rgba(0,0,0,0.05)', tickformat: '.2s' },
             margin: { t: 20, b: 120, l: 60, r: 20 },
-            colorway: ['#00e5ff', '#3b82f6', '#8b5cf6', '#ec4899', '#f43f5e']
+            colorway: ['#0ea5e9', '#3b82f6', '#8b5cf6', '#ec4899', '#f43f5e']
           }}
           useResizeHandler={true}
           style={{ width: '100%', height: '500px' }}
@@ -251,10 +246,10 @@ export default function OlapPage() {
             autosize: true,
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: 'rgba(0,0,0,0)',
-            font: { color: '#e2e8f0', family: 'Outfit' },
-            xaxis: { title: 'Date', gridcolor: 'rgba(255,255,255,0.05)' },
-            yaxis: { title: 'New Cases', gridcolor: 'rgba(255,255,255,0.05)' },
-            yaxis2: { title: 'New Deaths', overlaying: 'y', side: 'right', gridcolor: 'rgba(255,255,255,0.0)' },
+            font: { color: '#0f172a', family: 'Outfit' },
+            xaxis: { title: 'Date', gridcolor: 'rgba(0,0,0,0.05)' },
+            yaxis: { title: 'New Cases', gridcolor: 'rgba(0,0,0,0.05)' },
+            yaxis2: { title: 'New Deaths', overlaying: 'y', side: 'right', gridcolor: 'rgba(0,0,0,0.0)' },
             margin: { t: 20, b: 40, l: 60, r: 60 },
             legend: { orientation: 'h', y: 1.1 }
           }}

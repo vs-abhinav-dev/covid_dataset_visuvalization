@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --background: #060913;
-  --foreground: #e2e8f0;
-  --sidebar-bg: #0b1120;
-  --sidebar-hover: rgba(255, 255, 255, 0.05);
-  --accent: #00e5ff;
-  --accent-glow: rgba(0, 229, 255, 0.5);
-  --card-bg: rgba(15, 23, 42, 0.6);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --text-muted: #94a3b8;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --sidebar-bg: #ffffff;
+  --sidebar-hover: rgba(0, 0, 0, 0.04);
+  --accent: #0ea5e9;
+  --accent-glow: rgba(14, 165, 233, 0.4);
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --text-muted: #64748b;
 }
 
 * {
@@ -21,7 +21,7 @@ body {
   color: var(--foreground);
   margin: 0;
   font-family: 'Outfit', sans-serif;
-  background-image: radial-gradient(circle at 50% 0%, rgba(15, 30, 70, 0.5) 0%, rgba(6, 9, 19, 1) 50%);
+  background-image: radial-gradient(circle at 50% 0%, rgba(226, 232, 240, 0.8) 0%, rgba(248, 250, 252, 1) 50%);
   background-attachment: fixed;
   min-height: 100vh;
 }
@@ -38,11 +38,14 @@ h6 {
 
 .layout {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .sidebar {
   width: 280px;
+  height: 100vh;
+  overflow-y: auto;
   background-color: var(--sidebar-bg);
   padding: 2.5rem 1.5rem;
   display: flex;
@@ -56,7 +59,7 @@ h6 {
 .sidebar h2 {
   font-size: 1.75rem;
   margin-bottom: 2rem;
-  color: #fff;
+  color: #0f172a;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -90,12 +93,12 @@ h6 {
 
 .sidebar a:hover {
   background-color: var(--sidebar-hover);
-  color: #fff;
+  color: #0f172a;
   transform: translateX(4px);
 }
 
 .sidebar a.active {
-  background: linear-gradient(90deg, rgba(0, 229, 255, 0.1) 0%, transparent 100%);
+  background: linear-gradient(90deg, rgba(14, 165, 233, 0.1) 0%, transparent 100%);
   color: var(--accent);
   border-left: 3px solid var(--accent);
   font-weight: 600;
@@ -114,7 +117,7 @@ h6 {
   align-items: center;
   justify-content: flex-end;
   padding: 1.25rem 3rem;
-  background: rgba(6, 9, 19, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--card-border);
@@ -133,7 +136,7 @@ h6 {
 }
 
 .welcome-text strong {
-  color: #fff;
+  color: #0f172a;
 }
 
 .content-wrapper {
@@ -146,8 +149,8 @@ h6 {
 .page-title {
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
-  color: #fff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  color: #0f172a;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   position: relative;
   display: inline-block;
 }
@@ -170,21 +173,21 @@ h6 {
   border: 1px solid var(--card-border);
   border-radius: 1.5rem;
   padding: 2.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.05);
   margin-bottom: 2.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 30px 60px -15px rgba(0, 229, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 60px -15px rgba(14, 165, 233, 0.1);
+  border-color: rgba(14, 165, 233, 0.15);
 }
 
 .glass-card h3 {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: #0f172a;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -206,7 +209,7 @@ h6 {
 }
 
 .metric-card {
-  background: linear-gradient(145deg, rgba(15, 23, 42, 0.8) 0%, rgba(6, 9, 19, 0.9) 100%);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 1) 100%);
   border: 1px solid var(--card-border);
   padding: 1.5rem;
   border-radius: 1rem;
@@ -215,6 +218,7 @@ h6 {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .metric-card::before {
@@ -231,8 +235,8 @@ h6 {
 
 .metric-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(0, 229, 255, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.05);
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.1);
 }
 
 .metric-card:hover::before {
@@ -254,10 +258,10 @@ h6 {
 .metric-value {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #fff;
+  color: #0f172a;
   font-family: 'JetBrains Mono', monospace;
   line-height: 1.1;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  text-shadow: 0 0 20px rgba(14, 165, 233, 0.1);
 }
 
 .metric-subtitle {
@@ -274,7 +278,7 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.05) 0%, transparent 70%);
   border-radius: 50%;
 }
 
@@ -284,7 +288,7 @@ h6 {
   bottom: -20px;
   width: 60%;
   height: 10px;
-  background: rgba(0, 229, 255, 0.2);
+  background: rgba(14, 165, 233, 0.2);
   filter: blur(20px);
   border-radius: 50%;
 }
@@ -296,7 +300,7 @@ h6 {
   margin-bottom: 2rem;
   align-items: center;
   flex-wrap: wrap;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.5);
   padding: 1rem;
   border-radius: 1rem;
   border: 1px solid var(--card-border);
@@ -305,14 +309,14 @@ h6 {
 select {
   padding: 0.75rem 3rem 0.75rem 1.25rem;
   border-radius: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(15, 23, 42, 0.8);
-  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--sidebar-bg);
+  color: #0f172a;
   font-size: 0.95rem;
   cursor: pointer;
   appearance: none;
   font-family: inherit;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 1rem;
@@ -322,11 +326,12 @@ select {
 select:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
 }
 
 select option {
   background-color: var(--sidebar-bg);
+  color: #0f172a;
 }
 
 button {
@@ -356,7 +361,7 @@ button:active {
   transform: translateY(0);
 }
 
-/* Custom Scrollbar for dark theme */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -367,12 +372,12 @@ button:active {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #94a3b8;
 }
 
 /* Animations */
@@ -412,15 +417,15 @@ button:active {
 
 @keyframes pulseGlow {
   0% {
-    box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4);
+    box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.2);
   }
 
   70% {
-    box-shadow: 0 0 0 10px rgba(0, 229, 255, 0);
+    box-shadow: 0 0 0 10px rgba(14, 165, 233, 0);
   }
 
   100% {
-    box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
+    box-shadow: 0 0 0 0 rgba(14, 165, 233, 0);
   }
 }
 
@@ -434,7 +439,7 @@ button:active {
 }
 
 .js-plotly-plot .plotly .modebar-btn path {
-  fill: rgba(255, 255, 255, 0.5) !important;
+  fill: rgba(0, 0, 0, 0.4) !important;
 }
 
 .js-plotly-plot .plotly .modebar-btn:hover path {
@@ -459,15 +464,15 @@ button:active {
 
 @keyframes pulseBorder {
   0% {
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 0, 0, 0.08);
   }
 
   50% {
-    border-color: rgba(0, 229, 255, 0.4);
+    border-color: rgba(14, 165, 233, 0.3);
   }
 
   100% {
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 0, 0, 0.08);
   }
 }
 
@@ -477,15 +482,15 @@ button:active {
 
 @keyframes glowPulse {
   0% {
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.05);
   }
 
   50% {
-    box-shadow: 0 0 40px rgba(0, 229, 255, 0.3);
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.15);
   }
 
   100% {
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.05);
   }
 }
 

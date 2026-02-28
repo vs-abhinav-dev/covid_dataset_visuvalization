@@ -23,13 +23,13 @@ export default function Globe({ markers = [] }) {
                 height: width * 2,
                 phi: 0,
                 theta: 0.3,
-                dark: 1,
+                dark: 0,
                 diffuse: 1.2,
                 mapSamples: 16000,
                 mapBrightness: 6,
-                baseColor: [0.1, 0.1, 0.2], // Dark slate blue
-                markerColor: [0, 0.898, 1], // Cyan accent
-                glowColor: [0.1, 0.2, 0.4],
+                baseColor: [0.95, 0.97, 1], // Light slate blue
+                markerColor: [0.145, 0.388, 0.921], // Royal blue accent
+                glowColor: [0.9, 0.95, 1],
                 markers: markers.map(m => ({ location: [m.lat, m.lng], size: m.size })),
                 onRender: (state) => {
                     if (!pointerInteracting.current) {

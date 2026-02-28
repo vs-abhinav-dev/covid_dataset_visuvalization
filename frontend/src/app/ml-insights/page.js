@@ -40,7 +40,7 @@ export default function MLInsightsPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
                 {documents.map((doc, idx) => (
                     <div key={idx} className="glass-card" style={{ display: 'flex', flexDirection: 'column', padding: '2rem' }}>
-                        <h3 style={{ marginBottom: '1rem', color: '#fff', fontSize: '1.25rem' }}>{doc.title}</h3>
+                        <h3 style={{ marginBottom: '1rem', color: '#0f172a', fontSize: '1.25rem' }}>{doc.title}</h3>
                         <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', flexGrow: 1, lineHeight: '1.6' }}>
                             {doc.description}
                         </p>
@@ -52,13 +52,13 @@ export default function MLInsightsPage() {
                                 rel="noopener noreferrer"
                                 style={{
                                     display: 'flex', alignItems: 'center', gap: '0.5rem',
-                                    padding: '0.75rem 1rem', background: '#0f172a',
-                                    color: '#00e5ff', textDecoration: 'none',
-                                    borderRadius: '4px', border: '1px solid #1e293b',
+                                    padding: '0.75rem 1rem', background: '#f8fafc',
+                                    color: 'var(--accent)', textDecoration: 'none',
+                                    borderRadius: '4px', border: '1px solid #cbd5e1',
                                     fontSize: '0.9rem', fontWeight: '500', transition: 'all 0.2s', flex: 1, justifyContent: 'center'
                                 }}
-                                onMouseOver={(e) => e.currentTarget.style.background = '#1e293b'}
-                                onMouseOut={(e) => e.currentTarget.style.background = '#0f172a'}
+                                onMouseOver={(e) => e.currentTarget.style.background = '#e2e8f0'}
+                                onMouseOut={(e) => e.currentTarget.style.background = '#f8fafc'}
                             >
                                 <ExternalLink size={16} /> Open PDF
                             </a>
@@ -68,11 +68,11 @@ export default function MLInsightsPage() {
                                 style={{
                                     display: 'flex', alignItems: 'center', gap: '0.5rem',
                                     padding: '0.75rem 1rem', background: 'transparent',
-                                    color: '#e2e8f0', textDecoration: 'none',
-                                    borderRadius: '4px', border: '1px solid #334155',
+                                    color: '#0f172a', textDecoration: 'none',
+                                    borderRadius: '4px', border: '1px solid #94a3b8',
                                     fontSize: '0.9rem', fontWeight: '500', transition: 'all 0.2s'
                                 }}
-                                onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}
+                                onMouseOver={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.05)'}
                                 onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
                             >
                                 <Download size={16} />

@@ -66,7 +66,7 @@ export default function Dashboard() {
         return continents[d.continent] || '#94a3b8';
       }),
       opacity: 0.7,
-      line: { width: 1, color: 'rgba(255,255,255,0.2)' }
+      line: { width: 1, color: 'rgba(0,0,0,0.2)' }
     }
   }];
 
@@ -74,8 +74,28 @@ export default function Dashboard() {
     <div className="animate-fade-up">
       <h1 className="page-title">Global Overview</h1>
 
-      <div className="dashboard-grid-dual animate-slide-up" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', marginTop: '2rem' }}>
+      <div
+        className="globe-background"
+        style={{
+          position: 'fixed',
+          top: 0,
+          right: '-20%',
+          width: '100vw',
+          height: '100vh',
+          zIndex: -1,
+          opacity: 0.15,
+          pointerEvents: 'none',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        <div style={{ width: '120vh', height: '120vh' }}>
+          <Globe markers={data} />
+        </div>
+      </div>
 
+      <div className="dashboard-grid-dual animate-slide-up" style={{ display: 'grid', gridTemplateColumns: 'minmax(600px, 1fr)', gap: '2.5rem', marginTop: '2rem', zIndex: 1 }}>
         <div className="glass-card animate-pulse-border" style={{ flex: 1, marginBottom: 0, display: 'flex', flexDirection: 'column' }}>
           <h3>Stringency vs Total Cases</h3>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>Global overview of COVID-19 Stringency Index mapped against total cases registered and vaccination rollout sizes.</p>
@@ -86,9 +106,9 @@ export default function Dashboard() {
                 autosize: true,
                 paper_bgcolor: 'rgba(0,0,0,0)',
                 plot_bgcolor: 'rgba(0,0,0,0)',
-                font: { color: '#e2e8f0', family: 'Outfit' },
-                xaxis: { title: 'Stringency Index', gridcolor: 'rgba(255,255,255,0.05)', zerolinecolor: 'rgba(255,255,255,0.1)' },
-                yaxis: { title: 'Total Cases', gridcolor: 'rgba(255,255,255,0.05)', zerolinecolor: 'rgba(255,255,255,0.1)', type: 'log' },
+                font: { color: '#0f172a', family: 'Outfit' },
+                xaxis: { title: 'Stringency Index', gridcolor: 'rgba(0,0,0,0.05)', zerolinecolor: 'rgba(0,0,0,0.1)' },
+                yaxis: { title: 'Total Cases', gridcolor: 'rgba(0,0,0,0.05)', zerolinecolor: 'rgba(0,0,0,0.1)', type: 'log' },
                 hovermode: 'closest',
                 margin: { t: 10, b: 40, l: 60, r: 20 },
               }}
@@ -97,15 +117,6 @@ export default function Dashboard() {
             />
           </div>
         </div>
-
-        <div className="glass-card animate-glow-pulse" style={{ display: 'flex', flexDirection: 'column', height: '100%', minHeight: '500px' }}>
-          <h3>Global Hotspots</h3>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '2rem' }}>Interactive 3D representation of primary active data nodes.</p>
-          <div className="animate-float" style={{ flex: 1, position: 'relative', minHeight: '400px', maxHeight: '400px' }}>
-            <Globe markers={data} />
-          </div>
-        </div>
-
       </div>
     </div>
   );
