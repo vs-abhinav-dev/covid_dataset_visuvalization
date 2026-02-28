@@ -21,11 +21,10 @@
  GET / 200 in 58ms (compile: 9ms, render: 49ms)
  GET /api/olap/scatter-data 200 in 2.4s (compile: 369ms, render: 2.1s)
  GET /olap 200 in 1023ms (compile: 915ms, render: 108ms)
- GET /api/olap/countries 200 in 1477ms (compile: 346ms, render: 1131ms)
- GET /api/olap/dice?continent=Europe&start_year=2020&end_year=2021 200 in 1567ms (compile: 249ms, render: 1318ms)
- GET /api/olap/rollup 200 in 1643ms (compile: 301ms, render: 1342ms)
- GET /api/olap/slice/2021 200 in 2.3s (compile: 1286ms, render: 1044ms)
- GET /api/olap/drilldown/United%20States 200 in 2.6s (compile: 1314ms, render: 1290ms)
+ GET /api/olap/countries 200 inPersisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+1290ms)
  GET / 200 in 59ms (compile: 14ms, render: 45ms)
  GET /api/olap/scatter-data 200 in 1052ms (compile: 3ms, render: 1049ms)
  GET /olap 200 in 49ms (compile: 11ms, render: 39ms)
@@ -276,3 +275,4 @@ Returning cached clustering data for k=4
  GET /api/olap/clustering?k=4 200 in 8ms (compile: 1852µs, render: 6ms)
 Returning cached clustering data for k=4
  GET /api/olap/clustering?k=4 200 in 5ms (compile: 1400µs, render: 4ms)
+✓ Compiled in 6ms

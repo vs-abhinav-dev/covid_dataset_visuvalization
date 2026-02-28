@@ -20,7 +20,7 @@ export default function Layout({ children }) {
       <aside className="sidebar">
         <h2>
           <Globe2 size={28} className="text-accent" />
-          <span>COVID-19 Viz</span>
+          <span>COVIZ</span>
         </h2>
         <nav>
           {navItems.map((item) => {
@@ -41,7 +41,7 @@ export default function Layout({ children }) {
       <main className="main-content">
         <header className="topbar">
           <div className="welcome-text">
-            {/* <span>Hello, Analyst!</span> */}
+            {/* <span>Hello, Analyst  !</span> */}
             <strong>System Online <span style={{ color: '#00e5ff' }}>●</span></strong>
           </div>
         </header>
